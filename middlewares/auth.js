@@ -5,6 +5,7 @@ import { User } from '../models/User.js';
 
 export const isAuthenticated = catchAsyncError( async (req, res, next) => {
     const {token} = req.cookies;
+    console.log(req.cookies)
     if(!token){
         return next(new ErrorHandler('Not Logged Inss', 401 ))
     }
